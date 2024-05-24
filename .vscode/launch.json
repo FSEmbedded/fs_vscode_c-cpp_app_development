@@ -1,0 +1,55 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // "Build for FuS Board" and "Launch on FuS Board" can be enabled. If enabled, you can call them from the "Start Debugging" selection.
+        // They will work, but after completion try to launch the app on the host pc, which leads to an error message.
+        // Instead you can call a single task, which does basically the same without trying to launch the app. See tasks.json for more info.
+        /*{
+            "name": "Build for FuS Board",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${config:FUS.APP_NAME}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "targetArchitecture": "${config:FUS.BOARD_ARCH}",
+            "preLaunchTask": "fus_cross-compile",
+        },
+        {
+            "name": "Launch on FuS Board",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${config:FUS.APP_NAME}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "targetArchitecture": "${config:FUS.BOARD_ARCH}",
+            "preLaunchTask": "fus_launch-on-board",
+            "externalConsole":true,
+        },*/
+        {
+            "name": "Debug on FuS Board",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${config:FUS.APP_NAME}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "targetArchitecture": "${config:FUS.BOARD_ARCH}",
+            "preLaunchTask": "fus_debug-on-board",
+            "externalConsole":false,
+            "MIMode": "${config:FUS.MIMODE}",
+            "miDebuggerPath": "${config:FUS.DEBUGGER_PATH}",
+            "miDebuggerArgs":"${config:FUS.DEBUGGER_ARGS}",
+            "miDebuggerServerAddress": "${config:FUS.BOARD_IP}:${config:FUS.DEBUG_PORT}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "stopAtEntry": true,
+        },
+    ]
+}
