@@ -6,6 +6,12 @@
     "version": "2.0.0",
     "tasks": [
         {
+            // Shortcut to fus_cross-compile (Ctrl+Shift+B)
+            "label": "build",
+            "dependsOn": "fus_cross-compile",
+            "problemMatcher": []
+        },
+        {
             // Will compile for your FuS board
             "label": "fus_cross-compile",
             "type": "shell",
