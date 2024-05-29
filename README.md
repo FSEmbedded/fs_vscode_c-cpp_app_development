@@ -1,3 +1,4 @@
-# F&S - Cross Compile and Remote Debug in VS Code Example
+# F&S - Cross Compile and Remote Debug C/C++ App in VS Code Example
 
-Use this VS Code configuration to cross compile and remote debug on a F&S board from a Linux host. Adapt the values in '/.vscode/settings.json' to you develop environment.
+This Example configuration for Visual Studio Code let's you Cross Compile and Debug from a Linux Development Host to a F&S Board running Linux.
+Adapt the values in */.vscode/settings.json* to your develop environment.
